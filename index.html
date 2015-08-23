@@ -117,6 +117,24 @@
                 }
 
             }
+            
+            /* Needlemouse changes */
+            /* TODO: Adjust for different device sizes */
+            #header {
+                position: fixed;
+                width: 200px;
+                height: 100%;
+                background-color: {AccentColor};
+                border-style: solid;
+                border-width: 0px 50px 0px 0px;
+                border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAACLBAMAAADFQUneAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAASUExURQAAACB7MR94Mx55MyJ3Mx95NMtS0kMAAAAFdFJOUwAf3t8esam98QAAAVtJREFUWMON2MFtw1AMBFGW4BJiIAVkO0gJgRfTfys5JGfv+Ew8yJI+udR93v69vncNAkJACAgBISAEhIAQEAJCQAgIAf3V8BQ1r8eueQshIASEgBAQAkJACAgBISAEhIAQEAJCQAgIASEgBISAEBACQkAICAEhIASEgBAQAkJACAgBISAEhIAQEAJCQAgIASEgBISAEBACQkAICAEhIASEgGYNH6LmR9R87ZqK68n+XxX3J/s+Vzyv7Ode8f5kv4cV73P2uag4X9nntOK8Z/eNiv6T3ccq+mF2X63oz9l9vmJeZM+divmVPQcr5mn2XK6Y79k5oSJvZOeWivyTnaMq8lh2rqvIh9k5syKvZufeivycncMr8nz2XlCxX2TvKRX7TvbeVLF/Ze9xFftg9l5ZsZ9m77kV+3L23v2WOcGcYE4wJ5gTzK1vCf81T/H957FrJnOCOcGcYE4wv/V5Me/07pjGAAAAAElFTkSuQmCC) 50 repeat;
+                background-clip: content-box;
+                z-index: 3;
+            }
+            
+            #posts {
+                padding-left: 275px;
+            }
 
             /* Custom CSS */
             {CustomCSS}
@@ -201,6 +219,10 @@
                     </form>
                 </div>
             </div>
+            <header id="header">
+                <!-- For now, just focus on getting it right. Don't worry about making it general -->
+                The Nickscast
+            </header>
             <!--<div class="header-wrapper
                 {block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}
                 {block:HideHeaderImage}no-image {/block:HideHeaderImage}

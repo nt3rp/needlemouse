@@ -220,8 +220,39 @@
                 </div>
             </div>
             <header id="header">
+                <section id="blog_info">
+                    {block:IfShowBlogTitle}<h1><a href="/">{Title}</a></h1>{/block:IfShowBlogTitle}
+                    {block:PermalinkPage}{block:IfShowBlogDescription}{block:Description}<div class="description cont">{Description}</div>{/block:Description}{/block:IfShowBlogDescription}{/block:PermalinkPage}
+                    {block:IfNotShowRightColumn}{block:IfShowBlogDescription}<div class="cont description"{block:PermalinkPage} style="display:none"{/block:PermalinkPage}>{Description}</div>{/block:IfShowBlogDescription}{/block:IfNotShowRightColumn}
+                </section>
+                {block:IfShowProfilePhoto}
+                    <section id="blog_avatar">
+                        <a href="/" class="avatar"><img src="{PortraitURL-64}"></a>
+                    </section>
+                {/block:IfShowProfilePhoto}
+                <aside id="sidebar">
                 <!-- For now, just focus on getting it right. Don't worry about making it general -->
                 The Nickscast
+                {block:IfShowBlogDescription}{block:Description}<div class="cont description group">{Description}</div>{/block:Description}{/block:IfShowBlogDescription}
+
+                {block:HasPages}
+                    <ul class="links">
+                        {block:Pages}
+                            <li><a href="{URL}">{Label}</a></li>
+                        {/block:Pages}
+                    </ul>
+                {/block:HasPages}
+
+                <ul class="links" style="display:none;{block:AskEnabled} display:block;{/block:AskEnabled}{block:SubmissionsEnabled} display:block;{/block:SubmissionsEnabled}">
+                    {block:AskEnabled}<li><a href="/ask" class="ask"><span class="icon"></span>ask me anything</a></li>{/block:AskEnabled}
+                    {block:SubmissionsEnabled}<li><a href="/submit" class="submit"><span class="icon"></span>submit a post</a></li>{/block:SubmissionsEnabled}
+                </ul>
+
+                <ul class="links">
+                    <li><a href="{RSS}" class="rss"><span class="icon"></span>rss</a></li>
+                    <li><a href="/archive" class="archive"><span class="icon"></span>archive</a></li>
+                </ul>
+                </aside>
             </header>
             <!--<div class="header-wrapper
                 {block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}
